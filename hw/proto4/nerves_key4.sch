@@ -5361,7 +5361,7 @@ CONN_05
 <part name="C1" library="rcl" library_urn="urn:adsk.eagle:library:334" deviceset="C-US" device="C0603" package3d_urn="urn:adsk.eagle:package:23616/2" value="0.1uF"/>
 <part name="U1" library="cryptopi" deviceset="ATECC508A" device="SOIC-8-NARROW" package3d_urn="urn:adsk.eagle:package:4514464/1" value="ATECC508A-SSHDA"/>
 <part name="FRAME1" library="frames" library_urn="urn:adsk.eagle:library:229" deviceset="FRAME_A_L" device="" value="FRAME1"/>
-<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_05" device="" package3d_urn="urn:adsk.eagle:package:38104/1"/>
+<part name="J1" library="SparkFun-Connectors" library_urn="urn:adsk.eagle:library:513" deviceset="CONN_05" device="" package3d_urn="urn:adsk.eagle:package:38104/1" value="RPI_GPIO"/>
 </parts>
 <sheets>
 <sheet>
@@ -5379,38 +5379,24 @@ CONN_05
 <nets>
 <net name="VCC" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="VCC"/>
-<wire x1="101.6" y1="129.54" x2="124.46" y2="129.54" width="0.1524" layer="91"/>
 <label x="116.84" y="129.54" size="1.778" layer="95"/>
-<wire x1="124.46" y1="129.54" x2="127" y2="129.54" width="0.1524" layer="91"/>
-<pinref part="C1" gate="G$1" pin="1"/>
-<wire x1="129.54" y1="129.54" x2="127" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="127" x2="147.32" y2="129.54" width="0.1524" layer="91"/>
-<wire x1="147.32" y1="129.54" x2="129.54" y2="129.54" width="0.1524" layer="91"/>
 <pinref part="J1" gate="G$1" pin="1"/>
 <wire x1="124.46" y1="129.54" x2="124.46" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="VCC"/>
+<wire x1="101.6" y1="129.54" x2="124.46" y2="129.54" width="0.1524" layer="91"/>
+<pinref part="C1" gate="G$1" pin="1"/>
+<wire x1="124.46" y1="129.54" x2="147.32" y2="129.54" width="0.1524" layer="91"/>
+<wire x1="147.32" y1="129.54" x2="147.32" y2="127" width="0.1524" layer="91"/>
 <junction x="124.46" y="129.54"/>
-</segment>
-</net>
-<net name="SCL" class="0">
-<segment>
-<pinref part="U1" gate="G$1" pin="SCL"/>
-<wire x1="101.6" y1="124.46" x2="104.14" y2="124.46" width="0.1524" layer="91"/>
-<label x="116.84" y="124.46" size="1.778" layer="95"/>
-<wire x1="124.46" y1="124.46" x2="104.14" y2="124.46" width="0.1524" layer="91"/>
-<pinref part="J1" gate="G$1" pin="3"/>
-<wire x1="124.46" y1="124.46" x2="129.54" y2="124.46" width="0.1524" layer="91"/>
-<wire x1="129.54" y1="124.46" x2="129.54" y2="147.32" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="SDA" class="0">
 <segment>
-<pinref part="U1" gate="G$1" pin="SDA"/>
-<wire x1="101.6" y1="119.38" x2="111.76" y2="119.38" width="0.1524" layer="91"/>
 <label x="116.84" y="119.38" size="1.778" layer="95"/>
 <pinref part="J1" gate="G$1" pin="2"/>
-<wire x1="127" y1="119.38" x2="111.76" y2="119.38" width="0.1524" layer="91"/>
+<wire x1="127" y1="119.38" x2="101.6" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="127" y1="119.38" x2="127" y2="147.32" width="0.1524" layer="91"/>
+<pinref part="U1" gate="G$1" pin="SDA"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -5425,6 +5411,15 @@ CONN_05
 <wire x1="147.32" y1="114.3" x2="147.32" y2="119.38" width="0.1524" layer="91"/>
 <wire x1="134.62" y1="114.3" x2="147.32" y2="114.3" width="0.1524" layer="91"/>
 <junction x="134.62" y="114.3"/>
+</segment>
+</net>
+<net name="SCL" class="0">
+<segment>
+<pinref part="U1" gate="G$1" pin="SCL"/>
+<pinref part="J1" gate="G$1" pin="3"/>
+<wire x1="101.6" y1="124.46" x2="129.54" y2="124.46" width="0.1524" layer="91"/>
+<wire x1="129.54" y1="124.46" x2="129.54" y2="147.32" width="0.1524" layer="91"/>
+<label x="116.84" y="124.46" size="1.778" layer="95"/>
 </segment>
 </net>
 </nets>
